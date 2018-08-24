@@ -34,6 +34,7 @@ int read_config(void)
 	unsigned int i;
 	unsigned int vallen;
 
+	// 配置文件路径，该文件由agent生成，控制DLL的行为，如果不存在，则使用默认配置文件
     sprintf(config_fname, "C:\\%u.ini", GetCurrentProcessId());
 
     fp = fopen(config_fname, "r");
