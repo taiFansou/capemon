@@ -34,6 +34,15 @@
     <Filter Include="Source Files\CAPE\w64wow64">
       <UniqueIdentifier>{cf36b66e-1611-4be7-abe4-482a5fbacbe2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CAPE\WTL">
+      <UniqueIdentifier>{e4dfdc3f-15fa-4dff-8034-7b6b574e753e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\disassembler">
+      <UniqueIdentifier>{be0f15a8-a88f-44f8-8f33-05d4a9c44b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\disassembler">
+      <UniqueIdentifier>{5adf416f-dc7d-4697-95ee-dbb4725d66f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="config.c">
@@ -192,36 +201,6 @@
     <ClCompile Include="hooking.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="distorm3.2-package\src\decoder.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="distorm3.2-package\src\distorm.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="distorm3.2-package\src\instructions.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="distorm3.2-package\src\insts.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="distorm3.2-package\src\mnemonics.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="distorm3.2-package\src\operands.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="distorm3.2-package\src\prefix.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="distorm3.2-package\src\textdefs.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="distorm3.2-package\src\wstring.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="distorm3.2-package\src\x86defs.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CAPE\CAPE.c">
       <Filter>Source Files\CAPE</Filter>
     </ClCompile>
@@ -276,6 +255,36 @@
     <ClCompile Include="CAPE\wow64_fix.c">
       <Filter>Source Files\CAPE</Filter>
     </ClCompile>
+    <ClCompile Include="distorm3.2-package\src\x86defs.c">
+      <Filter>Source Files\disassembler</Filter>
+    </ClCompile>
+    <ClCompile Include="distorm3.2-package\src\wstring.c">
+      <Filter>Source Files\disassembler</Filter>
+    </ClCompile>
+    <ClCompile Include="distorm3.2-package\src\textdefs.c">
+      <Filter>Source Files\disassembler</Filter>
+    </ClCompile>
+    <ClCompile Include="distorm3.2-package\src\prefix.c">
+      <Filter>Source Files\disassembler</Filter>
+    </ClCompile>
+    <ClCompile Include="distorm3.2-package\src\operands.c">
+      <Filter>Source Files\disassembler</Filter>
+    </ClCompile>
+    <ClCompile Include="distorm3.2-package\src\mnemonics.c">
+      <Filter>Source Files\disassembler</Filter>
+    </ClCompile>
+    <ClCompile Include="distorm3.2-package\src\insts.c">
+      <Filter>Source Files\disassembler</Filter>
+    </ClCompile>
+    <ClCompile Include="distorm3.2-package\src\instructions.c">
+      <Filter>Source Files\disassembler</Filter>
+    </ClCompile>
+    <ClCompile Include="distorm3.2-package\src\distorm.c">
+      <Filter>Source Files\disassembler</Filter>
+    </ClCompile>
+    <ClCompile Include="distorm3.2-package\src\decoder.c">
+      <Filter>Source Files\disassembler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h">
@@ -321,36 +330,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="alloc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="distorm3.2-package\include\distorm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="distorm3.2-package\include\mnemonics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="distorm3.2-package\src\decoder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="distorm3.2-package\src\instructions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="distorm3.2-package\src\insts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="distorm3.2-package\src\operands.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="distorm3.2-package\src\prefix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="distorm3.2-package\src\textdefs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="distorm3.2-package\src\wstring.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="distorm3.2-package\src\x86defs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CAPE\CAPE.h">
@@ -412,6 +391,102 @@
     </ClInclude>
     <ClInclude Include="CAPE\w64wow64\windef.h">
       <Filter>Header Files\CAPE\w64wow64</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlapp.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlcrack.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlctrls.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlctrlw.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlctrlx.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlddx.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atldlgs.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atldwm.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlfind.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlframe.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlgdi.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlmisc.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlprint.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlres.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlresce.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlribbon.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlscrl.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlsplit.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atltheme.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atluser.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlwince.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="CAPE\WTL\Include\atlwinx.h">
+      <Filter>Header Files\CAPE\WTL</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.2-package\src\x86defs.h">
+      <Filter>Header Files\disassembler</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.2-package\src\instructions.h">
+      <Filter>Header Files\disassembler</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.2-package\src\prefix.h">
+      <Filter>Header Files\disassembler</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.2-package\src\decoder.h">
+      <Filter>Header Files\disassembler</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.2-package\src\wstring.h">
+      <Filter>Header Files\disassembler</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.2-package\src\textdefs.h">
+      <Filter>Header Files\disassembler</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.2-package\src\operands.h">
+      <Filter>Header Files\disassembler</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.2-package\include\mnemonics.h">
+      <Filter>Header Files\disassembler</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.2-package\src\insts.h">
+      <Filter>Header Files\disassembler</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.2-package\include\distorm.h">
+      <Filter>Header Files\disassembler</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -64,6 +64,8 @@ typedef struct _UNWIND_INFO {
 #define MAX_PRETRAMP_SIZE 320
 #define MAX_TRAMP_SIZE 128
 
+
+// 保存Hook前的条件结构
 typedef struct _hook_data_t {
 	unsigned char tramp[MAX_TRAMP_SIZE];
 	unsigned char pre_tramp[MAX_PRETRAMP_SIZE];
@@ -77,6 +79,8 @@ typedef struct _addr_map_t {
 	ULONG_PTR map[32][2];
 } addr_map_t;
 
+
+// 每一个API的Hook记录的结构
 typedef struct _hook_t {
     const wchar_t *library;
     const char *funcname;
@@ -91,6 +95,7 @@ typedef struct _hook_t {
     // pointer to the new function
     void *new_func;
 
+	// 函数通过跳板跳转到原来的函数地址
     // "function" which jumps over the trampoline and executes the original
     // function call
     void **old_func;
@@ -114,6 +119,8 @@ typedef struct _hook_t {
 	hook_data_t *hookdata;
 } hook_t;
 
+
+// 保存一个线程所有hook信息的结构
 typedef struct _hook_info_t {
 	int disable_count;
 	hook_t *last_hook;

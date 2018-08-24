@@ -61,6 +61,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // loq("sss", "key1", "value", "key2", "value2", "key3", "value3");
 // loq("3s", "key1", "value", "key2", "value2", "key3", "value3");
 //
+#ifndef __LOG_H
+#define __LOG_H
+
+
 
 #include "hooking.h"
 
@@ -158,3 +162,6 @@ typedef struct _lastlog_t {
 	int *repeated_ptr;
 	unsigned char *compare_ptr;
 } lastlog_t;
+
+
+#endif // __LOG_H

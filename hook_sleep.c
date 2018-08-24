@@ -16,6 +16,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/************************************************************************/
+/* Hook 同步等待以及时间的API                                             */
+/************************************************************************/
 #include <stdio.h>
 #include "ntapi.h"
 #include "hooking.h"

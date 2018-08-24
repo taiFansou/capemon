@@ -36,6 +36,8 @@ extern DWORD g_tls_hook_index;
 #define TLS_LAST_NTSTATUS_ERROR 0xbf4
 #endif
 
+
+// 保存同一进程的所有线程Hook状态
 static lookup_t g_hook_info;
 
 void hook_init()
@@ -48,7 +50,7 @@ void emit_rel(unsigned char *buf, unsigned char *source, unsigned char *target)
 	*(DWORD *)buf = (DWORD)(target - (source + 4));
 }
 
-// need to be very careful about what we call in here, as it can be called in the context of any hook
+// WARNING：need to be very careful about what we call in here, as it can be called in the context of any hook
 // including those that hold the loader lock
 
 static int set_caller_info(void *unused, ULONG_PTR addr)
@@ -66,6 +68,8 @@ static int set_caller_info(void *unused, ULONG_PTR addr)
 	return 0;
 }
 
+
+// 判断Hook是否被配置不允许Hook
 int hook_is_excluded(hook_t *h)
 {
 	unsigned int i;
@@ -86,12 +90,15 @@ int hook_is_excluded(hook_t *h)
 	return 0;
 }
 
+
+// 判断API地址是否在Hook掉的API地址范围内
 int addr_in_our_dll_range(void *unused, ULONG_PTR addr)
 {
 	if (addr >= g_our_dll_base && addr < (g_our_dll_base + g_our_dll_size))
 		return 1;
 	return 0;
 }
+
 
 static int __called_by_hook(ULONG_PTR stack_pointer, ULONG_PTR frame_pointer)
 {
@@ -154,6 +161,8 @@ int WINAPI enter_hook(hook_t *h, ULONG_PTR sp, ULONG_PTR ebp_or_rip)
 	return 0;
 }
 
+
+// 返回链表中，当前线程Hook状态，如果没有，则在链表中创建一个新的节点
 hook_info_t *hook_info()
 {
 	hook_info_t *ptr;

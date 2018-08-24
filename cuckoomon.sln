@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cuckoomon", "cuckoomon.vcxproj", "{15C69A24-71D1-4A1A-B39B-0466181ACD7E}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,8 +65,23 @@ Global
 		{52D1444F-0B18-4F98-BC62-3D11046190CC}.Release|Win32.Build.0 = Release|Win32
 		{52D1444F-0B18-4F98-BC62-3D11046190CC}.Release|x64.ActiveCfg = Release|x64
 		{52D1444F-0B18-4F98-BC62-3D11046190CC}.Release|x64.Build.0 = Release|x64
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Debug|Win32.Build.0 = Debug|Win32
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Debug|x64.ActiveCfg = Debug|x64
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Debug|x64.Build.0 = Debug|x64
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Release|Win32.ActiveCfg = Release|Win32
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Release|Win32.Build.0 = Release|Win32
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Release|x64.ActiveCfg = Release|x64
+		{0FB98165-D6BB-4F19-ACD7-D5FE10723C9F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBD4E3E1-2A85-4001-ADD2-117CA21E6231}
 	EndGlobalSection
 EndGlobal

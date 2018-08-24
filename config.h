@@ -43,22 +43,22 @@ struct _g_config {
 	wchar_t dllpath[MAX_PATH];
 
 	// file of interest
-	wchar_t *file_of_interest;
+	wchar_t *file_of_interest;	// 要分析的文件
 	
 	// URL of interest
-	wchar_t *url_of_interest;
+	wchar_t *url_of_interest;	// 带分析的URL
 
-	// Referrer for initial URL request
+	// Referrer for initial URL request（最开始的URL请求）
 	wchar_t *w_referrer;
 	char *referrer;
 
 	// if this mutex exists then we're shutting down
-    char shutdown_mutex[MAX_PATH];
+    char shutdown_mutex[MAX_PATH];	// 如果存在锁则必须关闭
 
 	// event set by analyzer when our process is potentially going to be terminated
 	// cuckoomon itself will flush logs at this point, but the analyzer may take additional
 	// actions, like process dumping
-	char terminate_event_name[MAX_PATH];
+	char terminate_event_name[MAX_PATH];	// 分析器在关闭自身进程时会先关闭所有事件
 
     // is this the first process or not?
     int first_process;

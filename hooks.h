@@ -25,6 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 // File Hooks
 //
+#pragma region File Hooks
 
 extern HOOKDEF(NTSTATUS, WINAPI, NtQueryAttributesFile,
 	__in   POBJECT_ATTRIBUTES ObjectAttributes,
@@ -411,9 +412,12 @@ extern HOOKDEF(BOOL, WINAPI, GetVolumeInformationByHandleW,
 	_In_      DWORD   nFileSystemNameSize
 );
 
+#pragma endregion
+
 //
 // Registry Hooks
 //
+#pragma region Registry Hooks
 
 extern HOOKDEF(LONG, WINAPI, RegOpenKeyExA,
     __in        HKEY hKey,
@@ -604,9 +608,13 @@ extern HOOKDEF(LONG, WINAPI, RegNotifyChangeKeyValue,
 	_In_     BOOL   fAsynchronous
 );
 
+#pragma endregion
+
+
 //
 // Native Registry Hooks
 //
+#pragma region Native Registry Hooks
 
 extern HOOKDEF(NTSTATUS, WINAPI, NtCreateKey,
     __out       PHANDLE KeyHandle,
@@ -733,9 +741,13 @@ extern HOOKDEF(NTSTATUS, WINAPI, NtSaveKeyEx,
     __in  ULONG Format
 );
 
+#pragma  endregion
+
+
 //
 // Window Hooks
 //
+#pragma  region Window Hooks
 
 extern HOOKDEF_NOTAIL(WINAPI, CreateWindowExA,
 	__in DWORD dwExStyle,
@@ -862,10 +874,13 @@ extern HOOKDEF(LONG_PTR, WINAPI, SetWindowLongPtrW,
 	_In_ LONG_PTR dwNewLong
 );
 
+#pragma endregion
 
 //
 // Sync Hooks
 //
+
+#pragma region Sync Hooks
 
 extern HOOKDEF(NTSTATUS, WINAPI, NtCreateMutant,
     __out       PHANDLE MutantHandle,
@@ -942,9 +957,13 @@ extern HOOKDEF(NTSTATUS, WINAPI, NtQueryInformationAtom,
     OUT PULONG ReturnLength OPTIONAL
 );
 
+#pragma endregion
+
+
 //
 // Process Hooks
 //
+#pragma region Process Hooks
 
 extern HOOKDEF(HANDLE, WINAPI, CreateToolhelp32Snapshot,
 	__in DWORD dwFlags,
@@ -1268,9 +1287,12 @@ extern HOOKDEF(BOOL, WINAPI, CreateProcessWithTokenW,
 	_Out_       LPPROCESS_INFORMATION lpProcessInfo
 );
 
+#pragma endregion
+
 //
 // Thread Hooks
 //
+#pragma region Thread Hooks
 
 extern HOOKDEF(NTSTATUS, WINAPI, NtQueueApcThread,
 	__in HANDLE ThreadHandle,
@@ -1383,9 +1405,12 @@ extern HOOKDEF(NTSTATUS, WINAPI, RtlCreateUserThread,
     OUT PCLIENT_ID ClientId
 );
 
+#pragma endregion
+
 //
 // Misc Hooks
 //
+#pragma  region Misc Hooks
 
 extern HOOKDEF(BOOL, WINAPI, SaferIdentifyLevel,
 	_In_       DWORD                  dwNumProperties,
@@ -1756,9 +1781,13 @@ extern HOOKDEF(HRESULT, WINAPI, PStoreCreateInstance,
 	_In_  DWORD dwFlags
 );
 
+#pragma  endregion
+
 //
 // Network Hooks
 //
+#pragma  region Network Hooks
+
 extern HOOKDEF(DWORD, WINAPI, InternetConfirmZoneCrossingA,
 	_In_ HWND hWnd,
 	_In_ LPTSTR szUrlPrev,
@@ -2206,9 +2235,12 @@ extern HOOKDEF(BOOL, WINAPI, HttpEndRequestW,
 	__in  DWORD_PTR dwContext
 );
 
+#pragma  endregion
+
 //
 // Service Hooks
 //
+#pragma region Service Hooks
 
 extern HOOKDEF(SC_HANDLE, WINAPI, OpenSCManagerA,
     __in_opt  LPCTSTR lpMachineName,
@@ -2288,9 +2320,12 @@ extern HOOKDEF(BOOL, WINAPI, DeleteService,
     __in  SC_HANDLE hService
 );
 
+#pragma endregion
+
 //
 // Sleep Hooks
 //
+#pragma region Sleep Hooks
 
 extern HOOKDEF(BOOL, WINAPI, GetLastInputInfo,
 	_Out_ PLASTINPUTINFO plii
@@ -2346,9 +2381,12 @@ extern HOOKDEF(BOOL, WINAPI, CreateTimerQueueTimer,
   _In_     ULONG               Flags
 );
 
+#pragma  endregion
+
 //
 // Socket Hooks
 //
+#pragma region Socket Hooks
 
 extern HOOKDEF(int, WINAPI, WSAStartup,
     _In_   WORD wVersionRequested,
@@ -2588,9 +2626,12 @@ extern HOOKDEF(BOOL, PASCAL, TransmitFile,
     DWORD dwFlags
 );
 
+#pragma  endregion
+
 //
 // Crypto Hooks
 //
+#pragma  region Crypt Hooks
 
 extern HOOKDEF(BOOL, WINAPI, CryptAcquireContextA,
 	_Out_	  HCRYPTPROV *phProv,
@@ -2782,9 +2823,13 @@ extern HOOKDEF(BOOL, WINAPI, CryptImportPublicKeyInfo,
 	_Out_ HCRYPTKEY             *phKey
 );
 
+#pragma  endregion
+
+
 //
 // Special Hooks
 //
+#pragma  region Special Hooks
 
 extern HOOKDEF_NOTAIL(WINAPI, LdrLoadDll,
     __in_opt    PWCHAR PathToFile,
@@ -2998,3 +3043,6 @@ extern HOOKDEF(NTSTATUS, WINAPI, NtCommitTransaction,
 extern HOOKDEF(BOOL, WINAPI, RtlSetCurrentTransaction,
     _In_ HANDLE     TransactionHandle
 );
+
+
+#pragma endregion

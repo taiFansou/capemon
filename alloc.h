@@ -1,6 +1,11 @@
 #ifndef __ALLOC_H
 #define __ALLOC_H
 
+/*
+ * 内存申请模块
+ * 对外提供统一的内存申请销毁等接口
+ * 根据宏 USE_PRIVATE_HEAP 决定使用私有堆以及对应的内存管理函数还是使用默认内存分配函数
+*/
 #include <assert.h>
 
 typedef NTSTATUS(WINAPI * _NtAllocateVirtualMemory)(

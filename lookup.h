@@ -17,23 +17,35 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/************************************************************************/
+/* 本质就是一个链表                                                       */
+/************************************************************************/
 #include <windows.h>
 
+// 内部查找结构
 typedef struct _lookup_internal_t {
     CRITICAL_SECTION cs;
     void *root;
 } lookup_t;
 
+// 实体节点结构（链表节点）
 typedef struct _entry_t {
-	struct _entry_t *next;
-	ULONG_PTR id;
-	unsigned int size;
-	unsigned char data[0];
+	struct _entry_t *next;	// 下一个节点
+	ULONG_PTR id;			// 当前节点的id
+	unsigned int size;		// 节点数据大小
+	unsigned char data[0];	// 数据存放
 } entry_t;
 
+
 void lookup_init(lookup_t *d);
+
+// 在链表增加一个节点（指定id），返回新增节点数据存放指针
 void *lookup_add(lookup_t *d, ULONG_PTR id, unsigned int size);
+
+// 返回指定id的节点的数据域
 void *lookup_get(lookup_t *d, ULONG_PTR id, unsigned int *size);
+
+// 在链表中删除指定id的节点
 void lookup_del(lookup_t *d, ULONG_PTR id);
 
 void *lookup_add_no_cs(lookup_t *d, ULONG_PTR id, unsigned int size);

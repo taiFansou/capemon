@@ -78,7 +78,8 @@ static hook_t g_hooks[] = {
     // and whatnot.
     //
     // In other words, do *NOT* place "special" hooks behind "normal" hooks.
-    //
+	// 
+    // 注意：不能把特殊的Hooks放在普通的Hooks之后
 
 	HOOK_NOTAIL_ALT(ntdll, LdrLoadDll, 4),
 	HOOK_NOTAIL(ntdll, LdrUnloadDll, 1),

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -21,33 +21,33 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{15C69A24-71D1-4A1A-B39B-0466181ACD7E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140_xp</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140_xp</PlatformToolset>
-    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -91,13 +91,15 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>CUCKOODBG;WIN32;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS_DEBUG;_WINDOWS;_USRDLL;MONGO_HAVE_STDINT;MONGO_STATIC_BUILD;CUCKOOMON_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>CUCKOODBG;WIN32;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS_DEBUG;_WINDOWS;_USRDLL;MONGO_HAVE_STDINT;MONGO_STATIC_BUILD;CUCKOOMON_EXPORTS;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\bson;.\distorm3.2-package\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\bson;.\distorm3.2-package\include;.\WTL\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>Default</CompileAs>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -115,13 +117,15 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>CUCKOODBG;WIN32;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS_DEBUG;_WINDOWS;_USRDLL;MONGO_HAVE_STDINT;MONGO_STATIC_BUILD;CUCKOOMON_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>CUCKOODBG;WIN32;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS_DEBUG;_WINDOWS;_USRDLL;MONGO_HAVE_STDINT;MONGO_STATIC_BUILD;CUCKOOMON_EXPORTS;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\bson;.\distorm3.2-package\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\bson;.\distorm3.2-package\include;.\WTL\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>Default</CompileAs>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -142,7 +146,7 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>.\bson;.\distorm3.2-package\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WTL81\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\bson;.\distorm3.2-package\include;.\WTL\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <EnablePREfast>false</EnablePREfast>
       <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
@@ -173,7 +177,7 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>.\bson;.\distorm3.2-package\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\bson;.\distorm3.2-package\include;.\WTL\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <EnablePREfast>false</EnablePREfast>
     </ClCompile>
@@ -425,6 +429,28 @@
     <ClInclude Include="CAPE\w64wow64\w64wow64.h" />
     <ClInclude Include="CAPE\w64wow64\w64wow64defs.h" />
     <ClInclude Include="CAPE\w64wow64\windef.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlapp.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlcrack.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlctrls.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlctrlw.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlctrlx.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlddx.h" />
+    <ClInclude Include="CAPE\WTL\Include\atldlgs.h" />
+    <ClInclude Include="CAPE\WTL\Include\atldwm.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlfind.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlframe.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlgdi.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlmisc.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlprint.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlres.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlresce.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlribbon.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlscrl.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlsplit.h" />
+    <ClInclude Include="CAPE\WTL\Include\atltheme.h" />
+    <ClInclude Include="CAPE\WTL\Include\atluser.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlwince.h" />
+    <ClInclude Include="CAPE\WTL\Include\atlwinx.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="distorm3.2-package\include\distorm.h" />
     <ClInclude Include="distorm3.2-package\include\mnemonics.h" />

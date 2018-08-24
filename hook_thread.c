@@ -16,6 +16,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/************************************************************************/
+/* Hook 线程操作API(包括应用层和native层)                                  */
+/************************************************************************/
 #include <stdio.h>
 #include "ntapi.h"
 #include "hooking.h"
